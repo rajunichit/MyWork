@@ -1,0 +1,73 @@
+<div class="container" style="padding-top: 60px;" ng-controller="profileController">
+  <h1 class="page-header">Edit Profile</h1>
+  <div class="row">
+    <!-- left column -->
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="text-center">
+        <img ng-src="{{profilePic}}" class="avatar img-circle img-thumbnail" alt="avatar" height="200px" width="200px">
+        
+        <h6>Upload a different photo...</h6>
+        <input type="file" id="fileInput"
+						class="form-control" />
+      </div>
+    </div>
+    <!-- edit form column -->
+    <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+    <a  href ng-click="logout()">logout</a>
+      <div class="alert alert-info alert-dismissable">
+        <a class="panel-close close" data-dismiss="alert">×</a> 
+        <i class="fa fa-coffee"></i>
+        This is an <strong>.alert</strong>. Use this to show important messages to the user.
+      </div>
+      <h3>Personal info</h3>
+      <form class="form-horizontal" role="form" ng-submit="updateProfile()"> 
+        <div class="form-group">
+          <label class="col-lg-3 control-label">First name:</label>
+          <div class="col-lg-8">
+            <input class="form-control" ng-model="firstName" type="text" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Last name:</label>
+          <div class="col-lg-8">
+            <input class="form-control" data-ng-model="lastName" type="text" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Email:</label>
+          <div class="col-lg-8">
+            <input class="form-control" data-ng-model="email" type="text" readonly>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="col-md-3 control-label">Nick Name</label>
+          <div class="col-md-8">
+            <input class="form-control" data-ng-model="nickName" type="text" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Password:</label>
+          <div class="col-md-8">
+            <input class="form-control" data-ng-model="password" type="password" required min="6">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Confirm password:</label>
+          <div class="col-md-8">
+            <input class="form-control" data-ng-model="confirmPassword" type="password" required min="6">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input  class="btn btn-primary" value="Save Changes" type="submit">
+            <span></span>
+            <input class="btn btn-default" value="Cancel" type="button" ng-click="resetData()">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
